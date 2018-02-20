@@ -1,0 +1,310 @@
+<?php
+/**
+ * Template Name: Member Display Template
+ */
+get_header();
+
+?>
+<script>
+jQuery(document).ready(function(){
+//alert();
+});
+</script>
+
+
+<div class="row padmar0">
+    <div class="col-md-12 padmar0">
+        <img src="<?php echo get_template_directory_uri() . '/images/members-banner.jpg'; ?>" class="img-responsive respImageheading" />
+        <div class="carousel-caption">
+            <h4 align="right" class="cust_head">Members list</h4>
+        </div>
+    </div>
+</div>
+  
+        <br/>
+        <div class="container">
+            <?php
+            
+            /* display villages dropdown list in member page start */
+
+            $sfamily_get_villages = get_terms(['taxonomy' => 'village', 'hide_empty' => false,]);
+            //print_r($sfamily_get_villages);
+            ?>
+            <div>
+                <form method="post" action="">
+                    <div class="row padmar0">
+                        <div class="col-md-9" >
+                            <div class="form-group">
+                                <select onchange="val()" id="select_id" name="membervillagesname" class="text " style="padding: 5px;">
+                                    <option value="">--Select village--</option>
+                                    <?php
+                                    foreach ($sfamily_get_villages as $data):
+                                        ?>
+                                        <option value="<?php echo $data->term_id; ?>" ><?php echo $data->name; ?></option>
+                                        <?php
+                                    endforeach;
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3" >
+                            <div style="float: left;" class="form-group">
+                                <input type="text"  name="searchtxt" placeholder="Search by member name" title="Search by member or mobile" class="form-control" value="" style="width: 200px;color: #1A5080;" />
+                            </div>
+                            <div>
+                                <button type="submit" name="sub" style="padding: 4px 8px;border: none;" ><span class=" custominputboxrander"><i class="fa fa-search" style="color: #1A5080;font-size: 14px;"></i></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div><br/>
+            <?php
+            /* display villages dropdown list in member page end */
+            
+            ?>
+        </div>
+        
+    </div>
+</div>
+
+<div class="row padmar0">
+    <div class="container">
+        <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#englishmenutab">English</a></li>
+                <li><a data-toggle="tab" href="#gujaratimenutab">Gujarati</a></li>
+        </ul>
+            <!-- get all subscriber(member) and display as below table -->
+            <div class="tab-content">
+                <!-- get user data with pagination (english) -->
+                <div id="englishmenutab" class="tab-pane fade in active">
+                    <br/>
+                    <div class="table-responsive">          
+                        <table class="table table-striped">
+                            <thead class="memberCustomHeadingRander">
+                                <tr>
+                                    <th>Profile</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Gender</th>
+                                    <th>Marital status</th>
+                                    <th>Mobile no.</th>
+                                    <th>village</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            <?php
+                            
+                            //pagination page or argument deside as below, which argument you use in pagination
+                            $no = 2; // total no of author to display
+                            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                            if ($paged == 1) {
+                                $offset = 0;
+                            } else {
+                                $offset = ($paged - 1) * $no;
+                            }
+                            if(isset($_POST['searchtxt']))
+                            {
+                                $user_query = new WP_User_Query(array(
+                                'search' => '*' . esc_attr($_POST['searchtxt']) . '*',
+                                'search_columns' => array(
+                                    'user_login',
+                                    'display_name',
+                                    ),
+                                ));
+                            }
+                            else{
+                                $user_query = new WP_User_Query(array('role' => 'Subscriber', 'number' => $no, 'offset' => $offset ));
+                            }
+                            
+                            if (!empty($user_query->results)) {
+                            foreach ($user_query->results as $user) { //get all user information using pagination arguument
+                                $user_details = get_usermeta($user->ID);
+                               
+                            ?>
+                                <!--All field display of user as below-->
+                                <tr class="memberCustomRander memberdispalycenter">
+                                    <td><?php 
+                                        $post_id = $user_details[23];
+                                        $get_single_post_by_id = get_post($post_id);
+                                        ?><img src="<?php  echo $get_single_post_by_id->guid; ?>" class="img-thumbnail" alt="Cinque Terre" width="100" height="100" /></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[13]; ?></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[18]; ?></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[21]; ?></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[22]; ?></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[15]; ?></td>
+                                    <td class="memberdispalycenter" ><?php
+                                            $term_data = get_term($user_details[20]);
+                                            echo $term_data->name;
+                                    ?></td>
+                                    <td class="memberdispalycenter"><a href="#"><i class="fa fa-users" aria-hidden="true" style="color: #1a5080;" ></i></a></td>
+                                </tr>
+                                <?php
+                                }
+                                } else {
+                                    echo 'No users found.';
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>    
+                    <?php
+//                    Pagination link generate
+                    $total_user = $user_query->total_users;
+                    $total_pages = ceil($total_user / $no);
+
+                     if(!isset($_POST['searchtxt']))
+                    {
+                        echo '<a href='.get_pagenum_link(1).' class="page-numbers"> '.__('<i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i>', PAGE_LANG).'</a>';
+                    }
+                    echo paginate_links(array(
+                        'base' => get_pagenum_link(1) . '%_%',
+                        'format' => '?paged=%#%',
+                        'current' => $paged,
+                        'total' => $total_pages,
+                        'prev_text' => __('<i class="fa fa-angle-left"></i>'),
+                        'next_text' => __('<i class="fa fa-angle-right"></i>'),
+                    ));
+                    
+                    the_posts_pagination( array(
+                        'mid_size' => 2,
+                        'prev_text' => __( 'Back', 'textdomain' ),
+                        'next_text' => __( 'Onward', 'textdomain' ),
+                    ) );
+                    if(!isset($_POST['searchtxt']))
+                    {
+                        echo '<a href='.get_pagenum_link($total_pages).' class="page-numbers"> '.__('<i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>', PAGE_LANG).'</a>';
+                    }
+                    ?>
+                </div>
+                <!-- get user data with pagination (gujarati) -->
+                <div id="gujaratimenutab" class="tab-pane fade">
+                    <br/>
+                    <div class="table-responsive">          
+                        <table class="table table-striped">
+                            <thead class="memberCustomHeadingRander">
+                                <tr>
+                                    <th>Profile</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Gender</th>
+                                    <th>Marital status</th>
+                                    <th>Mobile no.</th>
+                                    <th>village</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            <?php
+                            
+                            //pagination page or argument deside as below, which argument you use in pagination
+                            $no = 2; // total no of author to display
+                            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                            if ($paged == 1) {
+                                $offset = 0;
+                            } else {
+                                $offset = ($paged - 1) * $no;
+                            }
+                            if(isset($_POST['searchtxt']))
+                            {
+                                $user_query = new WP_User_Query(array(
+                                'search' => '*' . esc_attr($_POST['searchtxt']) . '*',
+                                'search_columns' => array(
+                                    'user_login',
+                                    'display_name',
+                                    ),
+                                ));
+                            }
+                            else{
+                                $user_query = new WP_User_Query(array('role' => 'Subscriber', 'number' => $no, 'offset' => $offset ));
+                            }
+                            
+                            if (!empty($user_query->results)) {
+                            foreach ($user_query->results as $user) { //get all user information using pagination arguument
+                                $user_details = get_usermeta($user->ID);
+                               
+                            ?>
+                                <!--All field display of user as below-->
+                                <tr class="memberCustomRander memberdispalycenter">
+                                    <td><?php 
+                                        $post_id = $user_details[23];
+                                        $get_single_post_by_id = get_post($post_id);
+                                        ?><img src="<?php  echo $get_single_post_by_id->guid; ?>" class="img-thumbnail" alt="Cinque Terre" width="100" height="100" /></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[14]; ?></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[19]; ?></td>
+                                    <td class="memberdispalycenter" ><?php
+                                        if($user_details[21] == "male")
+                                        {
+                                            echo "પુરુષ";
+                                        }
+                                        else
+                                        {
+                                            echo "સ્ત્રી";
+                                        }
+                                    ?></td>
+                                    <td class="memberdispalycenter" ><?php 
+                                    if($user_details[22] == "married")
+                                        {
+                                            echo "પરણિત";
+                                        }
+                                        else
+                                        {
+                                            echo "અપરણિત";
+                                        }
+                                    ?></td>
+                                    <td class="memberdispalycenter" ><?php echo $user_details[15]; ?></td>
+                                    <td class="memberdispalycenter" ><?php
+                                            $term_data = get_term($user_details[20]);
+                                            echo $term_data->name;
+                                    ?></td>
+                                    <td class="memberdispalycenter"><a href="#"><i class="fa fa-users" aria-hidden="true" style="color: #1a5080;" ></i></a></td>
+                                </tr>
+                                <?php
+                                }
+                                } else {
+                                    echo 'No users found.';
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div> 
+                    <?php
+                        
+//                    Pagination link generate
+                    $total_user = $user_query->total_users;
+                    $total_pages = ceil($total_user / $no);
+
+                     if(!isset($_POST['searchtxt']))
+                    {
+                        echo '<a href='.get_pagenum_link(1).' class="page-numbers"> '.__('<i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i>', PAGE_LANG).'</a>';
+                    }
+                    echo paginate_links(array(
+                        'base' => get_pagenum_link(1) . '%_%',
+                        'format' => '?paged=%#%',
+                        'current' => $paged,
+                        'total' => $total_pages,
+                        'prev_text' => __('<i class="fa fa-angle-left"></i>'),
+                        'next_text' => __('<i class="fa fa-angle-right"></i>'),
+                    ));
+                    
+                    the_posts_pagination( array(
+                        'mid_size' => 2,
+                        'prev_text' => __( 'Back', 'textdomain' ),
+                        'next_text' => __( 'Onward', 'textdomain' ),
+                    ) );
+                    if(!isset($_POST['searchtxt']))
+                    {
+                        echo '<a href='.get_pagenum_link($total_pages).' class="page-numbers"> '.__('<i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>', PAGE_LANG).'</a>';
+                    }
+                    ?>
+                </div>
+            </div>
+        
+    </div>
+</div>
+<br/><br/>
+<?php
+get_footer();
+?>

@@ -1,0 +1,91 @@
+/* Widget Login */
+.fw-widget-login {
+  .input {
+    @include placeholder(fade_out($fw-widget-inner-title-color, 25%));
+    width: 100%;
+    line-height: $input-height-base;
+    color: $fw-widget-inner-title-color;
+    background-color: fade_out($fw-widget-input-bg, 7%);
+    font-family: $fw-buttons-font-family;
+    font-weight: $fw-buttons-font-weight;
+    font-style: $fw-buttons-font-style;
+    font-size: $input-font-size;
+    padding: $input-padding-y $input-padding-x;
+  }
+  .forget_password {
+    font-family: $fw-buttons-font-family;
+
+    a{
+      font-family: $fw-widget-inner-title-font-family;
+      font-weight: $fw-widget-inner-title-font-weight;
+      font-style: $fw-widget-inner-title-font-style;
+      letter-spacing: $fw-widget-inner-title-letter-spacing;
+      color: $fw-widget-inner-title-color;
+      font-size: 14px;
+
+      &:hover{
+        color: $fw-widget-inner-title-hover-color;
+      }
+    }
+  }
+  .submit {
+    .fw-btn-login {
+      color: #fff !important;
+
+      &:hover{
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+/* Widget login on header nav */
+%login-layout-2{
+  .fw-widget-login {
+    padding: 20px;
+    .widget-title{
+      line-height: normal;
+    }
+    .loginform{
+      min-width: 280px;
+      .input {
+        @include placeholder(fade_out($fw-widget-inner-title-color, 25%));
+        width: 100%;
+        line-height: $input-height-base;
+        color: $fw-widget-inner-title-color;
+        background-color: fade_out($fw-widget-input-bg, 7%);
+        font-family: $fw-buttons-font-family;
+        font-weight: $fw-buttons-font-weight;
+        font-style: $fw-buttons-font-style;
+        font-size: $input-font-size;
+        padding: $input-padding-y $input-padding-x;
+      }
+      .forget_password {
+        font-family: $fw-buttons-font-family;
+
+        a{
+          font-family: $fw-widget-inner-title-font-family;
+          font-weight: $fw-widget-inner-title-font-weight;
+          font-style: $fw-widget-inner-title-font-style;
+          letter-spacing: $fw-widget-inner-title-letter-spacing;
+          color: $fw-widget-inner-title-color;
+          font-size: 14px;
+
+          &:hover{
+            color: $fw-widget-inner-title-hover-color;
+          }
+        }
+      }
+      .submit {
+        margin-bottom: 0;
+        .fw-btn-login {
+          color: #fff !important;
+
+          &:hover{
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}

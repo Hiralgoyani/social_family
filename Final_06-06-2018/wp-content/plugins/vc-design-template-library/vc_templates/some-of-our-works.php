@@ -1,0 +1,8 @@
+<?php
+/*
+Template Name:  Some of our works
+Preview Image:  #
+Descriptions:   #
+*/
+?>
+[vc_section css=".vc_custom_1498897996907{border-bottom-width: 15px !important;padding-top: 45px !important;}"][vc_row][vc_column offset="vc_col-lg-offset-3 vc_col-lg-6 vc_col-md-offset-3 vc_col-md-6"][vc_custom_heading text="Some of Our Works" font_container="tag:h2|text_align:center" google_fonts="font_family:Raleway%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900|font_style:800%20bold%20regular%3A800%3Anormal"][vc_custom_heading text="Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text." font_container="tag:p|text_align:center" google_fonts="font_family:Raleway%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900|font_style:300%20light%20regular%3A300%3Anormal"][/vc_column][/vc_row][vc_row css=".vc_custom_1498898044580{margin-top: 45px !important;padding-right: 8vw !important;padding-left: 8vw !important;}"][vc_column width="1/3"][vc_single_image source="external_link" alignment="center" external_style="vc_box_rounded" custom_src="https://drive.google.com/uc?export=view&id=0B9LakaSozcQXWWdPcXQ3WktkYTQ"][/vc_column][vc_column width="1/3"][vc_single_image source="external_link" alignment="center" external_style="vc_box_rounded" custom_src="https://drive.google.com/uc?export=view&id=0B9LakaSozcQXeXNCaUJORllob1E"][/vc_column][vc_column width="1/3"][vc_single_image source="external_link" alignment="center" external_style="vc_box_rounded" custom_src="https://drive.google.com/uc?export=view&id=0B9LakaSozcQXeEk3QUl3Q2VNSTQ"][/vc_column][/vc_row][/vc_section]

@@ -1,0 +1,106 @@
+.bt-header-top-bar{
+	background: $fw-top-bar-bg;
+	padding: 6px 0;
+	*:not(.fa) {
+		font-family: $fw-top-bar-font-family;
+		font-size: $fw-top-bar-font-size-text;
+		line-height: $fw-top-bar-height;
+		letter-spacing: $fw-top-bar-letter-spacing;
+		color: $fw-top-bar-text-color;
+		font-style: $fw-top-bar-font-style;
+		font-weight: $fw-top-bar-font-weight;
+	}
+	.menu-item a,
+	a{
+		color: $fw-top-bar-text-color;
+		&:hover{
+			color: fade_out($fw-top-bar-text-color, 70%);
+		}
+	}
+	.header-top-sidebar-item{
+		&.fw-sidebar-content-align-left{
+			text-align: left;
+		}
+		&.fw-sidebar-content-align-center{
+			text-align: center;
+		}
+		&.fw-sidebar-content-align-right{
+			text-align: right;
+			.widget{
+				&.widget_nav_menu{
+					ul.menu{
+						li.menu-item-type-custom{
+							> .menu-item-custom-wrap{
+								right: 0;
+								left: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+		.widget{
+			&.widget_text a,
+			a{
+				text-decoration: none;
+
+				font-family: $fw-top-bar-font-family;
+				font-size: $fw-top-bar-font-size-text;
+				line-height: $fw-top-bar-height;
+				letter-spacing: $fw-top-bar-letter-spacing;
+				color: $fw-top-bar-text-color;
+				font-style: $fw-top-bar-font-style;
+				font-weight: $fw-top-bar-font-weight;
+			}
+			&.widget_nav_menu{
+				@extend %menu-style-inline;
+				@extend %menu-custom-type-layout-default;
+				ul.menu{
+					> li{
+						a{
+							padding-top: 0;
+							padding-bottom: 0;
+						}
+					}
+				}
+				ul{
+					li {
+						a{
+							@include transition(.3s);
+							&:hover{
+								color: fade_out($fw-top-bar-text-color, 30%);
+							}
+						}
+						&.menu-item-custom-type-button_donate{
+							.give-form-wrap{
+								form.give-form{
+									margin: 0;
+									.give-btn{
+										margin: 0;
+										padding: 0 20px;
+								    border-radius: 0;
+								    box-shadow: 0 7px 0 0 $accent-color, 0 -7px 0 0 $accent-color;
+										@include transition(.4s ease);
+
+										font-family: $fw-top-bar-font-family;
+										font-size: $fw-top-bar-font-size-text;
+										line-height: $fw-top-bar-height;
+										letter-spacing: $fw-top-bar-letter-spacing;
+										color: $fw-top-bar-text-color;
+										font-style: $fw-top-bar-font-style;
+										font-weight: $fw-top-bar-font-weight;
+
+										&:hover{
+											background: darken($accent-color, 5%);
+											box-shadow: 0 7px 0 0 darken($accent-color, 5%), 0 -7px 0 0 darken($accent-color, 5%);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

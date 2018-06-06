@@ -1,0 +1,105 @@
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+// Theme Defaults
+$accent-color:            $theme-color-1;
+$secondary-color:         $theme-color-2;
+
+//== Body
+$body-bg: $website-bg-color;
+// $body-bg-image : 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+// $body-bg-repeat : 'no-repeat';
+
+//** Global text color on `<body>`.
+$text-color:           	  $text-color;
+
+//** Global textual link color.
+$link-color:              $link-color;
+//** Link hover color set via `darken()` function.
+$link-hover-color:        $link-hover-color;
+
+$padding-base-vertical:     12px;
+$padding-base-horizontal:   25px;
+
+$padding-large-vertical:    17px;
+$padding-large-horizontal:  45px;
+
+$padding-small-vertical:    6px;
+$padding-small-horizontal:  15px;
+
+//** Variable for space (padding or margin) in theme between element.
+$fw-space-between-elements-sm:     45px;
+$fw-space-between-elements-md:     100px;
+$fw-space-between-elements-lg:     150px;
+
+// section space
+$fw-section-padding: 		130px;
+
+//== Footer
+$fw-footer-widgets-link-color:   $fw-footer-widgets-text-color;
+$fw-footer-container-widgets-padding: 60px;
+
+//== Sidebar Widgets
+//==>Widget Title
+$fw-widget-title-font-size:           18px;
+$fw-widget-title-line-height:         40px;
+$fw-widget-title-color:               #333;
+$fw-widget-font-size:                 $font-size-base - 1;
+$fw-widget-line-height:               $line-height-base - 2;
+$fw-widget-space-each-item:           35px;
+//==> Widget Inner Title
+$fw-widget-inner-title-font-family:   $font-family-2;
+$fw-widget-inner-title-font-size:     15px;
+$fw-widget-inner-title-font-style:    normal;
+$fw-widget-inner-title-font-weight:   700;
+$fw-widget-inner-title-line-height:   24px;
+$fw-widget-inner-title-letter-spacing:0px;
+$fw-widget-inner-title-color:         #353535;
+$fw-widget-inner-title-hover-color:   $accent-color;
+$fw-widget-input-bg:                  #FFF;
+//==> Widget Inner link
+
+$fw-buttons-color:                $fw-buttons-color;
+$fw-buttons-hover-color:          $fw-buttons-hover-color;
+
+//== Form, input
+$input-font-size:                 13.5px;
+// ** horizontal and vertical padding
+$input-padding-x:                 15px;
+$input-padding-y:                 12px;
+
+// Section Overlay
+$fw-content-overlay-sm:                 40px;
+$fw-content-overlay-md:                 80px;
+$fw-content-overlay-lg:                 120px;
+
+// Section Height
+$fw-section-height-sm:                  240px;
+$fw-section-height-md:                  300px;
+$fw-section-height-lg:                  440px;
+
+// Padding top & bottom in all sections
+$fw-section-padding:            $fw-space-between-elements-md;
+
+$fw-section-padding-sm:         $fw-section-padding*0.6;
+$fw-section-padding-md:         $fw-section-padding;
+$fw-section-padding-lg:         $fw-section-padding*1.4;
+
+// Header
+$fw-top-bar-bg:       $fw-top-bar-bg;
+
+// footer
+$fw-footer-widgets-padding-top: 100px;
+
+// Button
+// $fw-btn-color:              $fw-btn-color;
+// $fw-btn-hover-color:        $fw-btn-hover-color;
+// $fw-buttons-font-family:    $fw-buttons-font-family;
+// $fw-buttons-font-size:      $fw-buttons-font-size;
+// $fw-buttons-line-height:    $fw-buttons-line-height;
+// $fw-buttons-letter-spacing: $fw-buttons-letter-spacing;
+// $fw-buttons-color:          $fw-buttons-color;
+// $fw-buttons-hover-color:    $fw-buttons-hover-color
+// $fw-buttons-font-style:     $fw-buttons-font-style;
+// $fw-buttons-font-weight:    $fw-buttons-font-weight;

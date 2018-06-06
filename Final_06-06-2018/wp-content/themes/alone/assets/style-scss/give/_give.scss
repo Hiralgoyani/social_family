@@ -1,0 +1,494 @@
+@import "give-single";
+@import "give-archive";
+
+@keyframes give_open_modal_animate{
+  from{
+    opacity: 0;
+    transform: translateY(-15%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes give_open_modal_animate{
+  from{
+    opacity: 0;
+    -webkit-transform: translateY(-15%);
+  }
+  to{
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+
+.mfp-wrap{
+  &.give-modal{
+    .mfp-content{
+      width: 600px;
+      max-width: 100%;
+      animation: give_open_modal_animate .6s cubic-bezier(.93,.29,.49,.77);
+      -webkit-animation: give_open_modal_animate .6s cubic-bezier(.93,.29,.49,.77);
+      form.give-form{
+        @extend %give_form_donation_custom_style;
+        margin-top: 22px !important;
+        .give-form-title{
+          font-size: 20px;
+          line-height: 24px;
+          letter-spacing: -1px;
+          max-width: 100%;
+          text-align: center;
+        }
+        .give-goal-progress{
+          text-align: center;
+          margin-bottom: 50px;
+          .raised{
+            .income{
+              font-size: 150%;
+            }
+            .goal-text{
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.give-btn{
+  background: $fw-btn-color;
+  color: $fw-buttons-color;
+  border: medium none;
+  border-radius: 3px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 13px 20px;
+  text-transform: uppercase;
+  &:hover{
+    background: $fw-btn-hover-color;
+    color: $fw-buttons-hover-color;
+    text-decoration: none;
+  }
+}
+
+.give-button-donate{
+  &.custom-give-button-donate{
+    form.give-form{
+      margin: 0;
+      .give-btn{
+        margin: 0;
+        display: inline-block !important;
+        @include transition(.3s ease);
+        &:hover{
+          background: darken($accent-color, 5%);
+        }
+      }
+    }
+    &.give-btn-alignment-left{
+      form.give-form{
+        text-align: left;
+      }
+    }
+    &.give-btn-alignment-right{
+      form.give-form{
+        text-align: right;
+      }
+    }
+    &.give-btn-alignment-center{
+      form.give-form{
+        text-align: center;
+      }
+    }
+    &.give-btn-style-rounded{
+      form.give-form{
+        .give-btn{
+          border-radius: 4px;
+        }
+      }
+    }
+    &.give-btn-style-square{
+      form.give-form{
+        .give-btn{
+          border-radius: 0px;
+        }
+      }
+    }
+    &.give-btn-style-circle{
+      form.give-form{
+        .give-btn{
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+
+.give-goal-progress{
+  margin-bottom: 50px;
+  .raised{
+    .income{
+      font-size: 150%;
+    }
+    .goal-text{
+    }
+  }
+}
+
+.custom-give-goal-progress{
+  margin-bottom: 30px;
+  width: 100%;
+  > .give-goal-progress{
+    margin: 0;
+  }
+  .progress-bar{
+    box-shadow: none;
+  }
+  &.custom-goal-temp-circle_2{
+    .give-goal-progress-circle2-svg{
+      width: 100%;
+      // text-align: center;
+      .progress-bar,
+      .raised{
+        float: none;
+      }
+      .progress-bar{
+        background: none;
+        padding: 0 15px;
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        position: relative;
+        svg{
+          width: 100%;
+        }
+      }
+      .raised{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        // font-size: 16px;
+        // line-height: 20px;
+        max-width: 70%;
+        text-align: center;
+      }
+    }
+  }
+  &.custom-goal-temp-square{
+    .give-goal-progress-square-svg{
+      width: 100%;
+      // text-align: center;
+      .progress-bar,
+      .raised{
+        float: none;
+      }
+      .progress-bar{
+        background: none;
+        padding: 0 15px;
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        position: relative;
+        svg{
+          width: 100%;
+        }
+      }
+      .raised{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        // font-size: 16px;
+        // line-height: 20px;
+        max-width: 70%;
+        text-align: center;
+      }
+    }
+  }
+  &.custom-goal-temp-heart{
+    .give-goal-progress-heart-svg{
+      width: 100%;
+      // text-align: center;
+      display: table;
+      .progress-bar,
+      .raised{
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+      }
+      .progress-bar{
+        background: none;
+        width: 52px;
+        margin: 0 auto;
+        position: relative;
+        &:after{
+          content: "";
+          position: absolute;
+          width: 52px;
+          height: 52px;
+          left: 50%;
+          top: 50%;
+          background: #333;
+          border-radius: 4px;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+        svg{
+          width: 60%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          z-index: 3;
+        }
+      }
+      .raised{
+        padding-left: 20px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    @media (max-width: 360px) {
+      .give-goal-progress-heart-svg{
+        .progress-bar{
+          width: 36px;
+          &:after{
+            width: 36px;
+            height: 36px;
+          }
+          svg{
+            width: 70%;
+          }
+        }
+        .raised{
+          font-size: 13px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+  &.custom-goal-temp-circle{
+    .give-goal-progress-circle-svg{
+      display: table;
+      .progress-bar,
+      .raised{
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+      }
+      .progress-bar{
+        width: 60px;
+        background: none !important;
+      }
+      .raised{
+        padding-left: 20px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    @media (max-width: 360px) {
+      .give-goal-progress-circle-svg{
+        .progress-bar{
+
+        }
+        .raised{
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+  &.custom-goal-temp-thinbar{
+    .give-goal-progress-thinbar{
+      padding-top: 9px;
+      .progress-bar{
+        display: block;
+        width: 100%;
+        background: #EEEEEE;
+        border-radius: 5px;
+        .progress-line{
+          position: relative;
+          height: 2px;
+          border-radius: 5px;
+          // transition: .6s cubic-bezier(1,.22,.56,.97);
+          // -webkit-transition: .6s cubic-bezier(1,.22,.56,.97);
+          .tick-progress{
+            position: absolute;
+            right: 0;
+            top: 8px;
+            transform: translate(50%, -100%);
+            -webkit-transform: translate(50%, -100%);
+            border: solid 9px transparent;
+          }
+        }
+      }
+      .raised{
+        .income{
+          font-size: 150%;
+        }
+        .goal-text{
+        }
+      }
+    }
+  }
+}
+
+#give-login-form{
+  input[type="text"],
+  input[type="password"]{
+    padding: 2px 10px;
+  }
+}
+
+%give_form_donation_custom_style{
+  // border-top: solid 5px $accent-color;
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  padding: 40px 40px 25px 40px;
+  background: #fafafa;
+  margin: 0 auto;
+  margin-top: 50px;
+  @media (max-width: 360px) {
+    padding: 20px 20px 5px 20px;
+  }
+  &:after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+  > * {
+
+  }
+  .give-donation-amount{
+    display: table;
+    width: 100%;
+    > *{
+      display: table-cell;
+      vertical-align: middle;
+      float: none !important;
+      max-width: none;
+      height: 53px;
+    }
+    .give-currency-symbol{
+      background: $accent-color;
+      color: #FFF;
+      border-color: darken($accent-color, 5%);
+      padding: 0 20px;
+      text-align: center;
+      width: 1%;
+    }
+    label.give-hidden{
+      background: $accent-color;
+      color: #FFF;
+      border: solid darken($accent-color, 5%);
+      border-width: 1px 0;
+      white-space: nowrap;
+      width: 1%;
+      padding-right: 20px;
+      @media (max-width: 515px) {
+        display: none;
+      }
+    }
+    input.give-text-input{
+      height: 53px !important;
+    }
+    .give-text-input{
+      text-align: left;
+      border-color: darken($accent-color, 5%) !important;
+      width: 100%;
+    }
+  }
+  .give-donation-levels-wrap{
+    margin-bottom: 0 !important;
+    &.give-select{
+      margin-bottom: 15px !important;
+    }
+    &:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li{
+      margin: 0 15px 15px 0 !important;
+      float: left;
+      // margin-right: 15px !important;
+      *{
+        vertical-align: middle;
+      }
+      .give-donation-level-btn{
+        background: none;
+        font-size: 13px;
+        height: auto;
+        margin: 0;
+        padding: 12px 20px;
+        border: solid 1px $accent-color;
+        color: $accent-color;
+        min-width: 110px;
+        @include transition(.3s ease);
+        &.give-default-level{
+          background: $accent-color;
+          color: #FFF;
+        }
+      }
+    }
+  }
+  #give-donation-level-radio-list{
+    margin-bottom: 15px !important;
+    padding: 15px 15px 0 15px;
+    border: solid 1px $accent-color;
+    li{
+      margin-right: 25px !important;
+    }
+  }
+  #give-final-total-wrap{
+    display: table;
+    width: 100%;
+    > *{
+      display: table-cell;
+      vertical-align: middle;
+      float: none !important;
+      max-width: none;
+      height: 53px;
+    }
+    .give-donation-total-label{
+      background: $accent-color;
+      color: #FFF;
+      border-color: darken($accent-color, 5%);
+      padding: 0 20px;
+      white-space: nowrap;
+    }
+    .give-final-total-amount{
+      text-align: left;
+      border-color: darken($accent-color, 5%) !important;
+      width: 100%;
+    }
+  }
+  .give-select{
+    height: 53px;
+    display: block;
+    width: 100%;
+    border-color: darken($accent-color, 5%) !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/arrow-down-icon.png") no-repeat scroll calc(100% - 10px) 50% / 16px auto;
+  }
+  .give-btn{
+    height: 53px;
+    display: block;
+    width: 100%;
+    background: $accent-color;
+    color: #FFF;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    @include transition(.3s ease);
+    &:hover{
+      opacity: 0.9;
+    }
+  }
+}

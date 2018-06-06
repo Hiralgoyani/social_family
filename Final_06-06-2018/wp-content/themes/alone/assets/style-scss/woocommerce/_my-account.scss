@@ -1,0 +1,36 @@
+.woocommerce-account{
+  .woocommerce{
+    .woocommerce-MyAccount-navigation{
+      ul{
+        padding: 0;
+        margin: 0;
+        li{
+          list-style: none;
+          a{
+            text-decoration: none;
+            @include transition(.3s);
+          }
+        }
+      }
+    }
+  }
+}
+
+.woocommerce{
+  form.login{
+    .button{
+      background: $accent-color;
+      color: #FFF;
+      font-weight: normal;
+      @include transition(.3s);
+      &:hover{
+        background: darken($accent-color, 5%);
+      }
+    }
+    .form-row{
+      .woocommerce-Button{
+        margin-right: 5px;
+      }
+    }
+  }
+}

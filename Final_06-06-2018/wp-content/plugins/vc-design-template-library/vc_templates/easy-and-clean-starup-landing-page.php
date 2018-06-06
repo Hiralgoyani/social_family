@@ -1,0 +1,8 @@
+<?php
+/*
+Template Name:  Easy and Clean Starup Landing page.
+Preview Image:  #
+Descriptions:   #
+*/
+?>
+[vc_section full_width="stretch_row" full_height="yes" content_placement="middle" video_bg="yes" video_bg_url="https://www.youtube.com/watch?v=bSSwAd4UQ0k" video_bg_parallax="content-moving" css=".vc_custom_1499005629727{padding-top: 10vh !important;background-color: #4c4c4c !important;}"][vc_row content_placement="middle"][vc_column width="1/2"][vc_custom_heading text="Easy and Clean Starup Landing page." font_container="tag:div|font_size:40px|text_align:left|color:%23ffffff|line_height:45px" google_fonts="font_family:Raleway%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900|font_style:300%20light%20regular%3A300%3Anormal"][vc_custom_heading text="Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text," font_container="tag:p|text_align:left|color:%23eaeaea" google_fonts="font_family:Raleway%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900|font_style:300%20light%20regular%3A300%3Anormal" css=".vc_custom_1498899244762{margin-top: 20px !important;}"][vc_btn title="Get Start Now" style="flat" shape="round" color="pink" i_align="right" i_type="material" i_icon_material="vc-material vc-material-arrow_forward" add_icon="true" css=".vc_custom_1498899387225{margin-top: 30px !important;}"][/vc_column][vc_column width="1/2"][vc_single_image source="external_link" external_img_size="400x548" alignment="center" custom_src="https://drive.google.com/uc?export=view&id=0B9LakaSozcQXdnRfY3pvdFhrQm8"][/vc_column][/vc_row][/vc_section]

@@ -1,0 +1,303 @@
+/* General Styles */
+/* -------------------------------------------------- */
+html {
+  overflow-x: hidden;
+}
+
+/* background image for body */
+body {
+  background-color: $body-bg;
+  background-image: url($body-bg-image);
+  background-repeat: $body-bg-repeat;
+
+  // boxed content
+  &.bt-side-boxed{
+    background-color: $body-bg;
+    background: url($body-bg-image);
+    background-repeat: $body-bg-repeat;
+    background-attachment: fixed;
+    #page{
+      max-width: 1170px;
+      margin: $boxed-site-margin-top auto;
+      background: $boxed-container-bg;
+      box-shadow: 0 0 24px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+/* wrapper for all sections */
+.fw-side-boxed .site-main {
+  background-color: $container-bg;
+
+  .fw-main-row {
+    > .fw-container {
+      background-color: $container-bg;
+    }
+  }
+}
+.fw-full,
+.fw-side-boxed {
+  .site {
+    margin-top: $fw-site-margin-top;
+    margin-bottom: $fw-site-margin-bottom;
+  }
+}
+
+// text selection
+::-moz-selection {
+  background: fade_out($accent-color, 90%);
+}
+::selection {
+  background: fade_out($accent-color, 90%);
+}
+
+/* Scroll To Top Button */
+.scroll-to-top {
+  i {
+    color: $fw-scroll-to-top-color;
+  }
+  &:hover {
+    border-color: $fw-scroll-to-top-color;
+  }
+}
+
+#page{
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="email"],
+  input[type="date"],
+  input[type="color"],
+  input[type="tel"],
+  input[type="search"],
+  textarea,
+  select{
+    border-radius: 1px;
+    border: 1px solid fade_out($fw-widget-inner-title-color, 90%);
+    @include transition(all .3s ease);
+    max-width: 100%;
+    &:focus {
+      border: 1px solid fade_out($accent-color, 50%);
+      -webkit-box-shadow: 0px 0px 5px fade_out($accent-color, 75%);
+      -moz-box-shadow: 0px 0px 5px fade_out($accent-color, 75%);
+      box-shadow: none; //0px 0px 5px fade_out($accent-color, 75%);
+      outline: none;
+    }
+  }
+  input[type="submit"]{
+    border-radius: 3px;
+    border: none;
+    background: $accent-color;
+    color: #fff;
+    padding: 8px 12px;
+    vertical-align: top;
+    font-size: 13px;
+    line-height: normal;
+    @include transition(.3s);
+    &:hover{
+      background: darken($accent-color, 10%);
+    }
+  }
+  input.search-field{
+    border-radius: 3px;
+    height: 38px;
+    padding: 0 10px;
+  }
+  input.search-submit{
+    height: 38px;
+    padding: 0 12px;
+  }
+}
+
+.fw-content-align-left{
+  text-align: left;
+}
+.fw-content-align-center{
+  text-align: center;
+}
+.fw-content-align-right{
+  text-align: right;
+}
+
+.bt-itable{
+  display: table;
+  width: 100%;
+  .bt-icell{
+    display: table-cell;
+    &.bt-icell-align-middle{
+      vertical-align: middle;
+    }
+  }
+}
+
+.alignleft{
+  float: left;
+  padding-right: 10px;
+}
+.alignright{
+  float: right;
+  padding-left: 10px;
+}
+
+table{
+  width: 100%;
+}
+
+#scroll-to-top-button{
+  position: fixed;
+  cursor: pointer;
+  opacity: .5;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  z-index: 99;
+  border-radius: 3px;
+  background: $accent-color;
+  @include transition(.5s);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(150px);
+  -webkit-transform: translateY(150px);
+  &.is-display{
+    visibility: visible;
+    opacity: .5;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+  span{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    border: solid #FFF;
+    border-width: 1px 1px 0 0;
+
+  }
+  &:hover{
+    opacity: 1;
+  }
+}
+
+/* custom-select-ui */
+#page .custom-select-ui{
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid rgba(53, 53, 53, 0.1);
+  background: #FFF;
+  @include transition(.3s);
+  &:hover{
+    border: 1px solid fade_out($accent-color, 50%);
+  }
+  &:after{
+    content: "\f107";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    opacity: .5;
+  }
+  > select{
+    cursor: pointer;
+    width: calc(100% + 17px);
+    border-color: transparent;
+    background: transparent;
+    margin: 0;
+    max-width: none;
+    position: relative;
+    z-index: 3;
+    outline: none;
+    option{
+      width: calc(100% + 17px);
+      max-width: none;
+      outline: none;
+    }
+  }
+}
+
+/* ui select2 - jquery render */
+#page .select2-container{
+  > a.select2-default{
+    height: 36px;
+    line-height: 36px;
+    background: #FFF;
+    background-color: #FFF;
+    border-radius: 3px;
+    border-color: rgba(53, 53, 53, 0.1);
+    box-shadow: none;
+    .select2-arrow{
+      background: transparent;
+      border: none;
+      &:after{
+        border-color: none;
+        border-color: #333;
+        border-image: none;
+        border-style: solid;
+        border-width: 1px 1px 0 0;
+        content: "";
+        height: 5px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%) rotate(135deg);
+        -webkit-transform: translateY(-50%) rotate(135deg);
+        width: 5px;
+        z-index: 1;
+      }
+      b{
+        display: none;
+      }
+    }
+  }
+}
+body #select2-drop{
+  border-color: rgba(53, 53, 53, 0.1);
+  .select2-search{
+    input{
+      background: none !important;
+      border-radius: 3px !important;
+      box-shadow: none !important;
+    }
+    position: relative;
+    &:after{
+      content: "\f002";
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      font-size: 11px;
+
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+  }
+  .select2-result-sub{
+    .select2-highlighted{
+      background: fade_out($accent-color, 10%);
+      color: #FFF;
+      border-radius: 3px;
+    }
+  }
+}
+
+.svg_bleeding_stock_wrap{
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+}

@@ -1,0 +1,2 @@
+/* 15/08/2017 - ver 1.0.1 */
+- Fix issue php version (5.4 -> 7.1)

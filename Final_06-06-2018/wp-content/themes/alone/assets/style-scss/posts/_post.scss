@@ -1,0 +1,32 @@
+@import "post-list";
+@import "post-single";
+@import "post-responsive";
+.post-list-type-blog-1{
+	@extend %post-list-1;
+}
+
+/* listing */
+.post-list-type-blog-2{
+	&.post-creative-layout-default{
+		@extend %post-list-creative-layout-default;
+	}
+	&.post-creative-layout-background{
+		@extend %post-list-creative-layout-background;
+	}
+}
+
+/* single */
+body.single{
+	.bt-content-area{
+		.bt-col-inner{
+			z-index: 20px;
+		}
+	}
+	.post-single-creative-layout-blog-2{
+		@extend %post-single-creative-layout;
+	}
+}
+
+.search-post-item{
+	@extend %search-post-layout-default;
+}

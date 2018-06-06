@@ -1,0 +1,51 @@
+// Logo
+.fw-wrap-logo{
+	.fw-site-logo{
+		display: inline-block;
+		strong.site-title{
+			// margin-top: 10px;
+			display: block;
+			font-family: $fw-logo-title-font-family;
+			font-size: $fw-logo-title-font-size;
+			line-height: $fw-logo-title-line-height;
+			letter-spacing: $fw-logo-title-letter-spacing;
+			color: $fw-logo-title-color;
+			font-style: $fw-logo-title-font-style;
+			font-weight: $fw-logo-title-font-weight;
+		}
+		span.site-description{
+			// margin-bottom: 10px;
+			display: block;
+			font-family: $fw-logo-subtitle-font-family;
+			font-size: $fw-logo-subtitle-font-size;
+			line-height: $fw-logo-subtitle-line-height;
+			letter-spacing: $fw-logo-subtitle-letter-spacing;
+			color: $fw-logo-subtitle-color;
+			font-style: $fw-logo-subtitle-font-style;
+			font-weight: $fw-logo-subtitle-font-weight;
+		}
+		&.logo-sticky-is-enable{
+			img.main-logo{
+				display: none;
+			}
+			img.sticky-logo{
+				display: inline-block !important;
+			}
+		}
+	}
+}
+
+// Logo retina
+.bt-logo-retina{
+	.fw-wrap-logo{
+		.fw-site-logo{
+			img.main-logo{
+				width: calc(#{$fw-menu-logo-width} / 2);
+			}
+			img.sticky-logo{
+				width: calc(#{$fw-menu-logo-sticky-width} / 2);
+				display: none;
+			}
+		}
+	}
+}

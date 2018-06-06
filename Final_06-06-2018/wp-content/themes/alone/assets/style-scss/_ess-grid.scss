@@ -1,0 +1,103 @@
+body .esg-filters{
+  > *{
+    &:first-child{
+      margin-left: 0 !important;
+    }
+    &:last-child{
+      margin-right: 0 !important;
+    }
+  }
+  .esg-filter-wrapper{
+    .esg-filterbutton{
+      &:not(:last-child){
+        margin-right: 15px;
+      }
+      border: none;
+      border-radius: 1px;
+      color: #999;
+      box-shadow: none;
+      @include transition(.3s);
+      &.selected{
+        border-color: $accent-color;
+        color: #fff;
+        background: $accent-color
+      }
+      span{
+
+      }
+    }
+  }
+  .esg-sortbutton-wrapper{
+    .esg-sortbutton,
+    .esg-sortbutton-order{
+      box-shadow: none;
+      @include transition(.3s);
+      &:hover{
+        border-color: $accent-color
+      }
+    }
+    .esg-sortbutton{
+
+      span{
+        color: #999;
+      }
+    }
+  }
+}
+body .esg-overflowtrick{
+  .mainul{
+    a{
+      @include transition(.3s);
+    }
+    > li{
+      .esg-content{
+        a{
+          @include transition(.3s);
+        }
+        ins{
+          text-decoration: none;
+        }
+        .add_to_cart_button{
+          position: relative;
+          &.loading{
+
+          }
+          &.added{
+            display: none;
+          }
+        }
+        .added_to_cart{
+          margin-top: 0;
+          background: $accent-color;
+          padding: 9px 20px;
+          color: #FFF;
+          border-radius: 3px;
+          @include transition(.3s);
+          &:hover{
+            background: darken($accent-color, 5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  .esg-navigationbutton{
+    &.esg-loadmore{
+      font-weight: normal;
+      background: $accent-color;
+      padding: 9px 20px;
+      color: #FFF;
+      border-radius: 3px;
+      line-height: 25px;
+      border: none;
+      @include transition(.3s);
+      &:hover{
+        background: darken($accent-color, 5%);
+        color: #FFF;
+        box-shadow: none;
+      }
+    }
+  }
+}

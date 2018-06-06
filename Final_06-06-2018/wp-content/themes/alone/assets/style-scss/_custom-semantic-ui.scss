@@ -1,0 +1,14 @@
+.ui.selection.dropdown > .delete.icon,
+.ui.selection.dropdown > .dropdown.icon,
+.ui.selection.dropdown > .search.icon{
+  line-height: 1.55em;
+}
+
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown .menu,
+.ui.selection.active.dropdown:hover,
+.ui.selection.active.dropdown:hover .menu,
+.ui.selection.dropdown:focus,
+.ui.selection.dropdown:focus .menu{
+  border-color: $accent-color;
+}

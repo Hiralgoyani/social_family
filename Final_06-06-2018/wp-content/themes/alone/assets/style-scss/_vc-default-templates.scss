@@ -1,0 +1,26 @@
+.style-ninja-form-inner-custom-ui{
+  *{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wpb_wrapper{
+    width: 100%;
+  }
+  label{
+    font-weight: 300 !important;
+  }
+  .ninja-forms-field{
+    border-width: 0 0 1px 0 !important;
+    background: transparent ;
+  }
+  textarea.ninja-forms-field{
+    height: 100px;
+  }
+  input[type="button"]{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-top: 30px;
+  }
+}

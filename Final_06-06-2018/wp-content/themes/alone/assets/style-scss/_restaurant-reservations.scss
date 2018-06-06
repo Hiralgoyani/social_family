@@ -1,0 +1,123 @@
+.rtb-booking-form{
+  fieldset:not(:first-child){
+    margin-top: 30px;
+  }
+  legend{
+    font-family: $fw-h4-font-family;
+    font-style:  $fw-h4-font-style;
+    font-weight: $fw-h4-font-weight;
+    // font-size: $fw-h4-font-size;
+    line-height: $fw-h4-line-height;
+    letter-spacing: $fw-h4-letter-spacing;
+    color: $fw-h4-color;
+
+    border-bottom: 0 none;
+    font-size: 16px;
+    padding: 0 0 0 30px !important;
+    // text-transform: uppercase;
+    position: relative;
+    margin-bottom: 0;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 20px;
+      border-bottom: 1px solid;
+    }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea{
+    padding: 9px 10px;
+    border-radius: 3px !important;
+  }
+  select{
+    padding: 10px;
+    min-width: 150px;
+    height: 44px;
+  }
+  input[type="submit"],
+  button{
+    padding: 6px 12px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    background: $accent-color;
+    color: #FFF;
+    @include transition(.3s);
+    &:hover{
+      background: darken($accent-color, 5%);
+    }
+  }
+}
+
+.rtb-message{
+  p{
+    border: 1px solid rgba(1, 1, 1, 0.1);
+    font-family: caption;
+    font-size: 30px;
+    font-style: italic;
+    line-height: 34px;
+    margin: 0 auto;
+    max-width: 650px;
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+.booking-form-style-3-cols{
+  .rtb-booking-form{
+    fieldset{
+      position: relative;
+      width: calc(100% + 30px);
+      margin-left: -30px;
+      display: block;
+      &:after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+      select{
+        width: 100%;
+      }
+      > legend{
+        margin-left: 30px;
+      }
+      > div{
+        float: left;
+        margin-left: 30px;
+        width: calc((100% / 3) - 30px);
+      }
+
+      .rtb-textarea.message-open{
+        width: calc(100% - 30px);
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .rtb-booking-form{
+      fieldset{
+        width: 100%;
+        margin-left: 0;
+        > legend{
+          margin-left: 0;
+        }
+        > div{
+          float: none;
+          margin-left: 0;
+          width: 100%;
+        }
+        .rtb-textarea.message-open{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

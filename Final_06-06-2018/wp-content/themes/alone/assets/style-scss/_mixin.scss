@@ -1,0 +1,45 @@
+@mixin linx ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;   
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin transition ($duration) {
+  -webkit-transition: $duration;
+  transition: $duration;
+}
+
+// Transform
+@mixin transform($transform){
+  -webkit-transform: $transform;
+  -moz-transform:   $transform;
+  -ms-transform:    $transform;
+  -o-transform:    $transform;
+  transform:    $transform;
+}
+
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// Placeholder text
+@mixin placeholder($color: #ccc) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}

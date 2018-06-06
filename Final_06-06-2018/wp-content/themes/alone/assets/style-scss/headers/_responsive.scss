@@ -1,0 +1,43 @@
+// hidden header mobi (default)
+header.bt-header-mobi{
+	display: none;
+}
+
+@media (max-width: $max-width-transform-header-mobi) {
+	// hidden header desktop
+	header.bt-header{
+		display: none;
+	}
+
+	// show header mobi
+	header.bt-header-mobi{
+		display: block;
+	}
+
+	header.header-3-top{
+		display: none;
+	}
+}
+
+/*
+responsive Menu Item Type Custom On Mobi 525px
+*/
+@media (max-width: 525px) {
+	.menu-item-type-custom{
+		> .menu-item-custom-wrap:not(.off-canvas-menu-wrap){
+			box-shadow: 0 0 18px 1px rgba(0,0,0,.3) !important;
+			position: fixed !important;
+			top: 100px !important;
+			left: 50%;
+			width: calc(100% - 50px);
+			max-height: calc(100% - 150px);
+			overflow: auto;
+			transform: translate(-50%, 0%);
+			-webkit-transform: translate(-50%, 0%);
+
+			.widget_shopping_cart_content{
+				width: 100% !important;
+			}
+		}
+	}
+}

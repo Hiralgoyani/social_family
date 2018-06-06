@@ -1,0 +1,45 @@
+/* button style default */
+%bt-btn-style-default{
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 3px;
+  @include transition(.3s);
+  &.bt-btn-default{
+    background: $fw-btn-color;
+    font-family: $fw-buttons-font-family;
+    font-weight: $fw-buttons-font-weight;
+    font-size: $fw-buttons-font-size;
+    line-height: $fw-buttons-line-height;
+    color: $fw-buttons-color;
+    letter-spacing: $fw-buttons-letter-spacing;
+    font-style: $fw-buttons-font-style;
+
+    &:hover{
+      background: $fw-btn-hover-color;
+      color: $fw-buttons-hover-color;
+      text-decoration: none;
+    }
+  }
+  &.bt-btn-border-line{
+    border: solid 2px;
+    border-color: $fw-btn-color;
+    font-family: $fw-buttons-font-family;
+    font-weight: $fw-buttons-font-weight;
+    font-size: $fw-buttons-font-size;
+    line-height: $fw-buttons-line-height;
+    color: $fw-buttons-font-family;
+    letter-spacing: $fw-buttons-letter-spacing;
+    font-style: $fw-buttons-font-style;
+    &:hover{
+      border-color: $fw-btn-hover-color;
+      background: $fw-btn-hover-color;
+      color: $fw-buttons-hover-color;
+      text-decoration: none;
+    }
+  }
+}
+.bt-btn-style-default{
+  @extend %bt-btn-style-1;
+}

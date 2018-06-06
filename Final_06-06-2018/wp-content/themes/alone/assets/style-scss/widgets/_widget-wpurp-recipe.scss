@@ -1,0 +1,56 @@
+.widget_wpurp_recipe_list_widget{
+  ul {
+    li {
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
+      .wp-post-image,
+      a{
+        display: inline-block !important;
+        vertical-align: top;
+      }
+      .wp-post-image {
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        img{
+          width: 50px;
+          height: 50px;
+        }
+      }
+      a{
+        width: calc(100% - 64px);
+        font-family: $fw-widget-inner-title-font-family;
+        font-size: $fw-widget-inner-title-font-size;
+        font-weight: bold;
+        font-style: $fw-widget-inner-title-font-style;
+        line-height: $fw-widget-inner-title-line-height;
+        letter-spacing: $fw-widget-inner-title-letter-spacing;
+        color: $accent-color;
+        display: block;
+        margin-bottom: 10px;
+
+        &:hover{
+          color: darken($fw-widget-inner-title-hover-color, 5%);
+        }
+      }
+    }
+  }
+}
+
+.widget_wpurp_recipe_search_widget{
+  form{
+   select{
+     display: block;
+     padding: 10px;
+     width: 100%;
+   }
+  }
+}
+
+.widget_wpurp_nutrition_label_widget{
+  .wpurp-nutrition-label{
+    max-width: none;
+    width: 100%;
+  }
+}

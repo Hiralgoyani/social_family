@@ -1,0 +1,56 @@
+/* Footer Widget */
+.bt-footer-widgets {
+  padding-top: $fw-footer-widgets-padding-top;
+  padding-bottom: $fw-footer-widgets-padding-bot;
+  background-color: $fw-footer-widgets-bg;
+  background-image: url($fw-footer-widget-bg-image);
+  background-repeat: $fw-footer-widget-bg-repeat;
+  background-position: $fw-footer-widget-bg-position;
+  background-size: $fw-footer-widget-bg-size;
+  padding-top: $fw-footer-container-widgets-padding;
+  padding-bottom: $fw-footer-container-widgets-padding;
+  position: relative;
+  .widget,
+  .widget li {
+    color: $fw-footer-widgets-text-color;
+  }
+  .widget a,
+  .widget .comment-author-link a {
+    //color: $fw-footer-widgets-link-color;
+    color: darken($fw-footer-widgets-link-color, 15%);
+
+    &:hover {
+      color: darken($fw-footer-widgets-link-color, 10%);
+    }
+  }
+  .widget-title {
+    font-weight: $subtitles-weight;
+    font-style: $subtitles-style;
+    color: $fw-footer-widgets-title;
+    font-size: $fw-footer-widgets-title-size;
+
+    span {
+      color: $fw-footer-widgets-title;
+    }
+  }
+  .widget_text {
+    .textwidget {
+      font-size: $font-size-base*0.9;
+    }
+  }
+}
+
+/*Responsive*/
+/* Screen 768px */
+@media(max-width:991px){
+  .footer-sidebar-item:not(:last-child){
+    margin-bottom: 50px;
+  }
+}
+/*Screen 568px*/
+@media (max-width: 767px) {
+  .bt-footer-widgets {
+    padding-top: ceil($fw-footer-widgets-padding-top*0.5);
+    padding-bottom: ceil($fw-footer-widgets-padding-bot*0.5);
+  }
+}

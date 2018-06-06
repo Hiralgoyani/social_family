@@ -1,0 +1,41 @@
+.bt-copyright-center{
+  text-align: center;
+}
+.bt-copyright-left{
+  text-align: left;
+}
+.bt-copyright-right{
+  text-align: right;
+}
+
+/* copyright and social area background & space */
+.bt-footer-bar {
+  background-color: $fw-footer-bar-bg;
+  padding-top: $fw-footer-bar-padding-top;
+  padding-bottom: $fw-footer-bar-padding-bot;
+  color: $fw-footer-bar-text;
+  @media (max-width: 991px) {
+    &.bt-footer-bar *{
+      text-align: center;
+    }
+  }
+}
+
+// footer copyright
+.bt-copyright {
+  font-size: $fw-copyright-font-size;
+  font-style: $fw-copyright-font-style;
+  font-weight: $fw-copyright-font-weight;
+  font-family: $fw-copyright-font-family;
+  line-height: $fw-copyright-line-height;
+  letter-spacing: $fw-copyright-letter-spacing;
+  color: $fw-copyright-text-color;
+
+  a {
+    color: $fw-copyright-text-color;
+
+    &:hover {
+      color: $fw-copyright-text-color;
+    }
+  }
+}

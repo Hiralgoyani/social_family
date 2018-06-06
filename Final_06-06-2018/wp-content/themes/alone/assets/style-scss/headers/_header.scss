@@ -1,0 +1,57 @@
+@import "menu-style";
+@import "header-absolute";
+@import "header-sticky";
+@import "header-logo";
+@import "header-top";
+@import "header-1";
+@import "header-2";
+@import "header-3";
+@import "header-mobi";
+@import "responsive";
+
+/* hidden menu title */
+.menu-item-hidden-title-yes{
+	a {
+		span{
+			display: none;
+		}
+	}
+}
+
+.bt-header{
+	.bt-header-main{
+		position: relative;
+		.bt-header-container{
+			background: $fw-menu-bg;
+			padding-top: $header-padding-top;
+			padding-bottom: $header-padding-bottom;
+		}
+		@extend %header-absolute-default;
+		// @extend %header-sticky-default;
+	}
+	&.bt-header-sticky{}
+	&.fw-menu-position-left{
+		.bt-nav-wrap{
+			text-align: left;
+		}
+	}
+	&.fw-menu-position-center{
+		.bt-nav-wrap{
+			text-align: center;
+		}
+	}
+	&.fw-menu-position-right{
+		.bt-nav-wrap{
+			text-align: right;
+		}
+	}
+	&.header-1{
+		@extend %header-style-1;
+	}
+	&.header-2{
+		@extend %header-style-2;
+	}
+	&.header-3{
+		@extend %header-style-3;
+	}
+}

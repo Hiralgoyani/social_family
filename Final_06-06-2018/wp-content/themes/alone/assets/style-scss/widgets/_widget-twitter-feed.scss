@@ -1,0 +1,65 @@
+/* Widget Twitter Feed */
+.fw-widget-twitter {
+  .tweet-list{
+    .tweet-item{
+      &:last-child{
+        border: none;
+      }
+      &.tw-has-logo{
+        .tweet-text{
+          padding-left: 40px;
+          .tweet-date{
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 6px 0;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  .tweet-avatar {
+    position: relative;
+    display: block;
+    height: 30px;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+  }
+  .tweet-text {
+    a{
+      font-family: $fw-widget-inner-title-font-family;
+      font-size: $fw-widget-inner-title-font-size;
+      font-weight: normal;
+      font-style: $fw-widget-inner-title-font-style;
+      line-height: $fw-widget-inner-title-line-height;
+      letter-spacing: $fw-widget-inner-title-letter-spacing;
+      color: $fw-widget-inner-title-color;
+
+      &:hover{
+        color: $fw-widget-inner-title-hover-color;
+      }
+    }
+  }
+}
+.bt-footer .fw-widget-twitter .tweet-item {
+  &:not(:last-child){
+    margin-bottom: 10px;
+  }
+  &:not(:first-child){
+    .tweet-avatar{
+      margin-top: 10px;
+    }
+  }
+  .tweet-avatar{
+    float: left;
+    margin-right: 10px;
+  }
+  .tweet-date{
+    // text-align: right;
+  }
+  border-bottom: 1px solid lighten($fw-footer-widgets-bg, 5%);
+}

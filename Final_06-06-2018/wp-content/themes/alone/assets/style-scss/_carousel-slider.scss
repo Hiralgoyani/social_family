@@ -1,0 +1,140 @@
+.carousel-slider{
+  .owl-dots{
+    .owl-dot > span{
+      border-radius: 50px;
+    }
+  }
+  &[data-slide-type="product-carousel"]{
+    .owl-item{
+      .product{
+        a.woocommerce-LoopProduct-link{
+          img{
+
+          }
+        }
+        .onsale{
+          font-size: 11px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          border-radius: 1px;
+          width: auto;
+          height: auto;
+          padding: 2px 3px;
+        }
+        .star-rating{
+          position: absolute;
+          top: 10px;
+          right: 8px;
+          z-index: 3;
+          margin: 0;
+          width: 4em;
+          &:before{
+            font-size: 12px;
+          }
+          > *{
+            padding: 0;
+          }
+          .rating{
+            color: transparent;
+          }
+          > span{
+            &:before{
+              font-size: 12px;
+            }
+          }
+        }
+        .price{
+          margin-top: 0;
+          margin-left: 20px;
+          del{
+            opacity: .8;
+            margin-right: 5px;
+          }
+          ins{
+            text-decoration: none;
+          }
+        }
+        a{
+          text-decoration: none;
+        }
+        h3{
+          font-size: 18px;
+          letter-spacing: -1px;
+          line-height: 24px;
+          padding-bottom: 0;
+          padding-left: 1em;
+          padding-right: 1em;
+          @include transition(.3s ease);
+          &:hover{
+            opacity: .8;
+          }
+        }
+        .button,
+        .added_to_cart{
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          border-radius: 1px;
+          padding: 14px 0;
+          @include transition(.3s ease);
+          &:hover{
+            opacity: .8;
+          }
+        }
+        .add_to_cart_button{
+          &.added{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel-slider__product-modal{
+  .images{
+    .wp-post-image{
+      max-width: 100%;
+      height: auto;
+    }
+    .onsale{
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-radius: 1px;
+      width: auto;
+      height: auto;
+      padding: 2px 3px;
+      background: $accent-color;
+      color: #FFF;
+    }
+  }
+  .entry-summary{
+    padding: 0 30px;
+    .product_title{
+      font-size: 42px;
+      letter-spacing: -3px;
+      margin-top: 0;
+      line-height: 45px;
+    }
+    .price{
+      margin: 10px 0;
+      del{
+        opacity: .8;
+        margin-right: 5px;
+      }
+      ins{
+        text-decoration: none;
+      }
+    }
+    .button{
+      border-radius: 1px !important;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 11px;
+      padding: 14px 20px !important;
+      background: $accent-color;
+    }
+  }
+}

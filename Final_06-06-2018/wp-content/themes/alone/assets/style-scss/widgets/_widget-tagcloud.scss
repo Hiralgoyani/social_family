@@ -1,0 +1,85 @@
+/* Widget TagCloud */
+.widget_tag_cloud {}
+.widget_tag_cloud .tagcloud a,
+.fw-tag-links a,
+.post-tags a,
+.woocommerce.widget_product_tag_cloud .tagcloud a {
+  display: inline-block;
+  font-size: 11px !important;
+  font-family: $fw-buttons-font-family;
+  font-weight: $fw-buttons-font-weight;
+  font-style: $fw-buttons-font-style;
+  color: #fff !important;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  margin: 8px;
+  background-color: $fw-widget-inner-title-color;
+  border-radius: 0 3px 3px 0;
+  position: relative;
+  @include transition(all .3s ease);
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-right: 10px solid $fw-widget-inner-title-color;
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    box-shadow: 2px 0 0 -1px $fw-widget-inner-title-color;
+    @include transition(all .3s ease);
+  }
+
+  &:after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: -2px;
+    top: 13px;
+  }
+  &:hover {
+    background-color: $fw-widget-inner-title-hover-color;
+    color: #fff;
+
+    &:before {
+      border-right-color: $fw-widget-inner-title-hover-color;
+      box-shadow: 2px 0 0 -1px $fw-widget-inner-title-hover-color;
+    }
+  }
+}
+
+.off-canvas-menu-container{
+  .widget{
+    &.widget_tag_cloud{
+      .tagcloud{
+        a{
+          background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+          border: 1px solid;
+          border-radius: 1px;
+          display: inline-block !important;
+          font-size: 10px !important;
+          letter-spacing: 2px;
+          line-height: normal !important;
+          margin: 0 3px 9px 0;
+          padding: 8px 10px;
+          text-transform: uppercase;
+          width: auto;
+          @include transition(.3s);
+          &:hover{
+            color: $accent-color !important;
+          }
+          &:before,
+          &:after{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

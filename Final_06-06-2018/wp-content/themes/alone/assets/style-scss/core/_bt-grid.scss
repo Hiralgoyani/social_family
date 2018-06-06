@@ -1,0 +1,47 @@
+.bt-row{
+  margin-left: -26px;
+  transition-property: height, width;
+  -webkit-transition-property: height, width;
+  width: calc(100% + 30px);
+  position: relative;
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box !important;
+  }
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  @for $i from 1 through 12 {
+    .bt-col-#{$i}{
+      width: calc(100% / #{$i});
+      box-sizing: border-box;
+      // float: left;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: -4px;
+      padding-left: 30px;
+      &.bt-col-align-middle{
+        vertical-align: middle;
+      }
+    }
+  }
+
+  /* responsive */
+  @media (min-width: 769px) and (max-width: 991px){
+    @for $i from 3 through 12 {
+      .bt-col-#{$i}{
+        width: calc(100% / 2);
+      }
+    }
+  }
+  @media (max-width: 768px){
+    @for $i from 2 through 12 {
+      .bt-col-#{$i}{
+        width: calc(100%);
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.woocommerce{
+  form .form-row input.input-text,
+  form .form-row textarea,
+  .select2-container .select2-selection{
+    line-height: normal;
+    padding: 6px 10px;
+    border-radius: 3px;
+    height: auto;
+    border: 1px solid rgba(53, 53, 53, 0.1);
+    .select2-selection__rendered{
+      padding: 0;
+    }
+    .select2-selection__arrow{
+      height: 40px;
+    }
+  }
+  input#place_order{
+    background: $accent-color;
+    color: #FFF;
+    font-weight: normal !important;
+    @include transition(.3s);
+    &:hover{
+      background: darken($accent-color, 5%);
+      color: #FFF;
+    }
+  }
+}
+.woocommerce-checkout{
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  textarea{
+    border-radius: 3px !important;
+    padding: 10px !important;
+  }
+  textarea{
+    min-height: 180px;
+  }
+  h3{
+    font-size: 25px;
+  }
+  .button{
+    font-weight: normal !important;
+    @include transition(.3s);
+  }
+  .checkout_coupon{
+    .button{
+      background: $accent-color;
+      color: #FFF;
+      font-weight: normal !important;
+      @include transition(.3s);
+      &:hover{
+        background: darken($accent-color, 5%);
+        color: #FFF;
+      }
+    }
+  }
+  #payment{
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #EAEAEA;
+    border-radius: 3px;
+    ul.wc_payment_methods{
+      border-bottom: 1px solid #EAEAEA;
+      li.wc_payment_method{
+        label{
+          padding-top: 5px;
+          a.about_paypal{
+            margin-left: 10px;
+          }
+        }
+        .payment_box{
+          background-color: #ececec;
+          &:before{
+            border-bottom-color: #ececec;
+          }
+        }
+      }
+      li:not(:last-child){
+        padding: 5px 0;
+        border-bottom: 1px solid #ececec;
+      }
+    }
+  }
+}

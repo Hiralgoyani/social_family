@@ -1,0 +1,12 @@
+%header-absolute-default{
+	.bt-header-container{
+		&.fw-absolute-header{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			z-index: 999;
+			background: fade_out($fw-menu-bg, $fw-header-absolute-opacity) !important;
+		}
+	}
+}

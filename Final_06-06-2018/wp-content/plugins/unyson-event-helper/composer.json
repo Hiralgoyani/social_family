@@ -1,0 +1,6 @@
+{
+    "require": {
+        "omnipay/paypal": "~2.0",
+        "dompdf/dompdf": "*"
+    }
+}

@@ -1,0 +1,84 @@
+.bt-header-mobi{
+	background: $fw-menu-bg;
+	&.fw-absolute-header{
+		.bt-header-mobi-main{
+			position: absolute;
+			z-index: 99;
+		}
+	}
+	.bt-header-mobi-main{
+		padding: 10px 0;
+	}
+	&.bt-header-sticky{}
+	&.fw-menu-position-left{
+		.bt-nav-wrap{
+			text-align: left;
+		}
+	}
+	&.fw-menu-position-center{
+		.bt-nav-wrap{
+			text-align: center;
+		}
+	}
+	&.fw-menu-position-right{
+		.bt-nav-wrap{
+			text-align: right;
+		}
+	}
+	&.header-mobi{
+		.bt-container-logo{
+			width: 15%
+		}
+		.bt-container-menu{
+			width: 85%;
+		}
+		.bt-header-mobi-main{
+			display: block;
+			width: 100%;
+			.fw-wrap-logo{
+				display: block;
+				vertical-align: middle;
+			}
+			.bt-nav-wrap{
+				display: block;
+				vertical-align: middle;
+				.bt-site-navigation{
+					@extend %menu-style-1;
+				}
+			}
+		}
+	}
+
+	.default-mobi-menu-wrap{
+		@extend %default-mobi-menu-style;
+	}
+}
+
+%default-mobi-menu-style{
+	position: relative;
+	&.menu-mobi-is-open{
+		#bt-menu-mobi-menu{
+			display: block;
+		}
+	}
+	.button-toggle-ui{
+		background: $accent-color;
+    border: 1px solid $accent-color;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 4px;
+    padding: 4px 12px 4px 15px;
+    text-transform: uppercase;
+		@include transition(.3s ease);
+		&:hover{
+			color: #FFF;
+			background: darken($accent-color, 5%);
+			border-color: darken($accent-color, 5%);
+		}
+	}
+	.bt-site-navigation{
+		display: none;
+		@extend %menu-style-mobi-default;
+	}
+}

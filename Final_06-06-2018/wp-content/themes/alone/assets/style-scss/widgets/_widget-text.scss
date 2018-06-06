@@ -1,0 +1,18 @@
+/* Widget Text */
+.widget_text{
+  .textwidget {
+    a{
+      font-family: $fw-widget-inner-title-font-family;
+      font-size: $fw-widget-inner-title-font-size;
+      font-weight: $fw-widget-inner-title-font-weight;
+      font-style: $fw-widget-inner-title-font-style;
+      line-height: $fw-widget-inner-title-line-height;
+      letter-spacing: $fw-widget-inner-title-letter-spacing;
+      color: $fw-widget-inner-title-color;
+
+      &:hover{
+        color: $fw-widget-inner-title-hover-color;
+      }
+    }
+  }
+}

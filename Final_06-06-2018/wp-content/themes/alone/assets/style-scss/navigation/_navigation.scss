@@ -1,0 +1,143 @@
+/* navigation style default */
+%navigation-style-default{
+	.pagination{
+		margin-top: 30px;
+		margin-bottom: 30px;
+		width: 100%;
+		display: table;
+		a{
+			text-decoration: none;
+			@include transition(.3s);
+		}
+		.before-hr,
+		.after-hr{
+			display: none;
+		}
+		> .prev,
+		> .next,
+		> .pagination-numbers-wrap{
+			display: table-cell;
+			vertical-align: middle;
+		}
+		> .prev,
+		> .next{
+			padding: 10px 16px;
+			line-height: normal;
+			background: $accent-color;
+			color: #FFF;
+			border-radius: 50px;
+			white-space: nowrap;
+			&:not(.disabled):hover{
+				background: darken($accent-color, 5%);
+			}
+			&.prev{
+				> i{
+					padding-right: 10px;
+				}
+			}
+			&.next{
+				> i{
+					padding-left: 10px;
+				}
+			}
+			&.disabled{
+				opacity: .6;
+				cursor: default;
+			}
+			strong,
+			i{
+				display: inline-block;
+			    line-height: normal;
+			    vertical-align: middle;
+			}
+		}
+		> .pagination-numbers-wrap{
+			margin: 0 20px;
+			width: 100%;
+			text-align: center;
+			.page-numbers{
+				display: inline-block;
+			    height: 30px;
+			    line-height: 30px;
+			    text-align: center;
+			    vertical-align: top;
+			    width: 20px;
+			    color: $accent-color;
+				&:not(:last-child){
+					margin-right: 10px;
+				}
+				&.current,
+				&:hover{
+					color: #d9d9d9;
+				}
+			}
+		}
+	}
+}
+
+/* navigation style 2 */
+%navigation-style-2{
+	display: block;
+	text-align: center;
+	.pagination{
+		border: 2px solid #e8e8e8;
+    border-radius: 0;
+    padding: 10px 20px;
+		display: inline-block;
+		> *{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 11px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+		.pagination-numbers-wrap{
+			margin: 0 20px;
+			.page-numbers{
+				font-size: 16px;
+				min-width: 28px;
+				height: 20px;
+				display: inline-block;
+				vertical-align: top;
+				&:not(:last-child){
+					margin-right: 4px;
+				}
+			}
+		}
+		a{
+			color: #999;
+			text-decoration: none;
+			@include transition(.3s);
+			&:hover{
+				color: $accent-color;
+			}
+			&.prev{
+				i{
+					margin-right: 4px;
+					font-size: 20px;
+					line-height: normal;
+					vertical-align: middle;
+				}
+			}
+			&.next{
+				i{
+					margin-left: 4px;
+					font-size: 20px;
+					line-height: normal;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+.navigation {
+	&.paging-navigation{
+		&.paging-navigation-type-1{
+			@extend %navigation-style-default;
+		}
+		&.paging-navigation-type-2{
+			@extend %navigation-style-2;
+		}
+	}
+}

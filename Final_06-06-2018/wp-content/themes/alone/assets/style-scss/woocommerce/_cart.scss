@@ -1,0 +1,184 @@
+.woocommerce{
+  .shop_table{
+    border: none !important;
+    &.cart{
+      border-bottom: 1px solid #F8F7F7 !important;
+    }
+    a{
+      @include transition(.3s);
+    }
+    .remove{
+      color: #d9d9d9 !important;
+      &:hover{
+        background: none !important;
+        color: #555 !important;
+      }
+    }
+    thead,
+    tbody,
+    tfoot{
+      th, td{
+        border-left: none;
+        border-right: none;
+      }
+    }
+    thead{
+      th{
+        padding: 20px;
+        font-size: 14px;
+        text-transform: uppercase;
+        background: #F8F7F7;
+      }
+    }
+    tbody,
+    tfoot{
+      th{
+        padding: 20px;
+      }
+      td{
+        padding: 30px 20px;
+      }
+      td, th{
+        @include transition(.6s);
+        border-top: none !important;
+        border-bottom: 1px solid;
+        border-color: #F8F7F7 !important;
+      }
+      th:first-child,
+      td:first-child{
+        padding-left: 0;
+      }
+      tr:hover{
+        > td,
+        > th{
+          border-color: fade_out($accent-color, 50%) !important;
+        }
+      }
+    }
+    .cart_item{
+      .product-thumbnail{
+        .wp-post-image{
+          max-width: 100%;
+          width: 100px;
+          border: solid 1px fade_out($accent-color, 80%);
+          padding: 2px;
+          background: #FFF;
+        }
+      }
+      .product-name{
+        a{
+          font-weight: normal;
+          text-decoration: none;
+        }
+      }
+      .product-quantity{
+        .quantity{
+          input.qty{
+            padding: 10px;
+          }
+        }
+      }
+    }
+    td.actions{
+      input.button,
+      input.input-text{
+        border-radius: 30px !important;
+        padding: 15px 20px !important;
+      }
+      input[name="update_cart"]:not([disabled]){
+        background: #8c8c8c;
+        color: #FFF;
+        font-weight: normal;
+        @include transition(.3s);
+        &:hover{
+          background: darken(#8c8c8c, 8%);
+        }
+      }
+      .coupon{
+        > *{
+          display: table-cell;
+          vertical-align: middle;
+          float: none !important;
+        }
+        input#coupon_code{
+          border-radius: 3px;
+          padding: 9px 10px;
+          width: 200px;
+        }
+        .button{
+          background: $accent-color;
+          color: #FFF;
+          font-weight: normal;
+          @include transition(.3s);
+          &:hover{
+            background: darken($accent-color, 5%);
+          }
+        }
+      }
+    }
+  }
+
+  .cart-collaterals{
+    .cart_totals {
+      h2{
+        font-size: 25px;
+      }
+      .shop_table{
+        tbody{
+          tr{
+            > *{
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      .wc-proceed-to-checkout{
+        .button{
+          background: $accent-color;
+          @include transition(.3s);
+          border-radius: 100px;
+          color: #fff;
+          display: inline-block;
+          font-size: 16px;
+          font-weight: normal;
+          min-width: auto;
+          padding: 16px 30px;
+          width: auto;
+          &:hover{
+            background: darken($accent-color, 5%);
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .shop_table{
+      tbody,
+      tfoot{
+        tr{
+          td, th{
+            border-bottom-color: #ebebeb !important;
+            &:first-child{
+              padding-left: 20px;
+            }
+          }
+          &:hover{
+            td, th{
+              border-bottom-color: #ebebeb !important;
+            }
+          }
+        }
+
+      }
+      td.actions{
+        input{
+          margin-bottom: 10px !important;
+          width: 50% !important;
+        }
+        .coupon{
+          text-align: left;
+        }
+      }
+    }
+  }
+}

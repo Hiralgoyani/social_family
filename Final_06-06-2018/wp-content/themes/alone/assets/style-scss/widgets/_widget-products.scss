@@ -1,0 +1,25 @@
+.bt-footer-widgets{
+  .widget_products{
+    .product_list_widget{
+      li{
+        a{
+          color: $accent-color;
+          font-weight: bold;
+          .wp-post-image{
+            width: 50px !important;
+            margin-right: 10px;
+          }
+        }
+        .amount{
+          font-size: 0.9em;
+        }
+        del{
+          margin-right: 5px;
+        }
+        ins{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

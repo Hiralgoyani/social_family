@@ -1,0 +1,6 @@
+@import "comment-style";
+
+.comments-template-1{
+	// @extend %comment-style-default;
+	@extend %comment-style-2;
+}

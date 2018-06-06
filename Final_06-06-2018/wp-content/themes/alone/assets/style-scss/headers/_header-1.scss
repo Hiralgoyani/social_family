@@ -1,0 +1,23 @@
+%header-style-1{
+	.bt-container-logo{
+		width: 15%
+	}
+	.bt-container-menu{
+		width: 85%;
+	}
+	.bt-header-main{
+		display: block;
+		width: 100%;
+		.fw-wrap-logo{
+			display: block;
+			vertical-align: middle;
+		}
+		.bt-nav-wrap{
+			display: block;
+			vertical-align: middle;
+			.bt-site-navigation{
+				@extend %menu-style-1;
+			}
+		}
+	}
+}

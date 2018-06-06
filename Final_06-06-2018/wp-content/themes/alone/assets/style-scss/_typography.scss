@@ -1,0 +1,126 @@
+/* Typography */
+/* -------------------------------------------------- */
+
+// Body text
+// -------------------------
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: $font-weight-base;
+  font-style: $font-style-base;
+  letter-spacing: $font-letter-spacing-base;
+  color: $text-color;
+}
+
+// Links
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:focus,
+  &:active {
+    color: $link-color;
+  }
+}
+
+// Headings
+// -------------------------
+h1,
+.h1 {
+  font-family: $fw-h1-font-family;
+  font-style:  $fw-h1-font-style;
+  font-weight: $fw-h1-font-weight;
+  font-size: $fw-h1-font-size;
+  line-height: $fw-h1-line-height;
+  letter-spacing: $fw-h1-letter-spacing;
+  color: $fw-h1-color;
+}
+h2,
+.h2 {
+  font-family: $fw-h2-font-family;
+  font-style:  $fw-h2-font-style;
+  font-weight: $fw-h2-font-weight;
+  font-size: $fw-h2-font-size;
+  line-height: $fw-h2-line-height;
+  letter-spacing: $fw-h2-letter-spacing;
+  color: $fw-h2-color;
+}
+h3,
+.h3 {
+  font-family: $fw-h3-font-family;
+  font-style:  $fw-h3-font-style;
+  font-weight: $fw-h3-font-weight;
+  font-size: $fw-h3-font-size;
+  line-height: $fw-h3-line-height;
+  letter-spacing: $fw-h3-letter-spacing;
+  color: $fw-h3-color;
+}
+h4,
+.h4 {
+  font-family: $fw-h4-font-family;
+  font-style:  $fw-h4-font-style;
+  font-weight: $fw-h4-font-weight;
+  font-size: $fw-h4-font-size;
+  line-height: $fw-h4-line-height;
+  letter-spacing: $fw-h4-letter-spacing;
+  color: $fw-h4-color;
+}
+h5,
+.h5 {
+  font-family: $fw-h5-font-family;
+  font-style:  $fw-h5-font-style;
+  font-weight: $fw-h5-font-weight;
+  font-size: $fw-h5-font-size;
+  line-height: $fw-h5-line-height;
+  letter-spacing: $fw-h5-letter-spacing;
+  color: $fw-h5-color;
+}
+h6,
+.h6 {
+  font-family: $fw-h6-font-family;
+  font-style:  $fw-h6-font-style;
+  font-weight: $fw-h6-font-weight;
+  font-size: $fw-h6-font-size;
+  line-height: $fw-h6-line-height;
+  letter-spacing: $fw-h6-letter-spacing;
+  color: $fw-h6-color;
+}
+hr{
+  margin: $fw-space-between-elements-sm/2 auto;
+}
+
+$blockquote-margin: ($fw-content-density * 4);
+
+
+blockquote {
+  color: $text-color;
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+
+  .fw-symbols-quote {
+    color: $text-color;
+  }
+  cite{
+    color: $theme-color-3;
+    font-family: $fw-buttons-font-family;
+    font-weight: $fw-buttons-font-weight;
+    font-style: $fw-buttons-font-style;
+    font-size: ceil($font-size-base*1.06);
+  }
+}
+
+/*Responsive*/
+/*Screen 568px*/
+@media(max-width:767px){
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6{
+    letter-spacing: 0 !important;
+  }
+}

@@ -1,0 +1,121 @@
+/* Widget Categories, Nav Menu, Meta, Pages */
+.widget_categories,
+.widget_nav_menu,
+.widget_meta,
+.widget_pages,
+.widget_archive,
+.woocommerce.widget_product_categories {
+  ul > li {
+    color: $fw-widget-inner-title-hover-color;
+    // font-style: italic;
+
+    a {
+      font-family: $fw-widget-inner-title-font-family;
+      font-size: $fw-widget-inner-title-font-size;
+      // font-weight: $fw-widget-inner-title-font-weight;
+      font-style: $fw-widget-inner-title-font-style;
+      line-height: $fw-widget-inner-title-line-height;
+      letter-spacing: $fw-widget-inner-title-letter-spacing;
+      color: $fw-widget-inner-title-color;
+
+      display: inline-block;
+      padding: 4px 0;
+      &:hover {
+        color: $fw-widget-inner-title-hover-color;
+      }
+    }
+
+    ul.children,
+    ul.sub-menu {
+      // margin-bottom: 0.3em;
+      padding-left: 14px;
+      li {
+
+      }
+    }
+  }
+  .screen-reader-text {
+    display: none;
+  }
+}
+
+// Widget Menu
+.widget_nav_menu {
+  .sub-menu-has-icons {
+    .fa {
+      margin-right: 10px;
+    }
+  }
+  .menu-separator {
+    display: none;
+  }
+}
+
+.bt-footer-widgets{
+  .widget_product_categories{
+    .product-categories{
+      .cat-item{
+        display: table;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        > *{
+          display: table-cell;
+          vertical-align: middle;
+        }
+        a{
+          font-family: $fw-widget-inner-title-font-family;
+          font-size: $fw-widget-inner-title-font-size;
+          font-weight: $fw-widget-inner-title-font-weight;
+          font-style: $fw-widget-inner-title-font-style;
+          line-height: $fw-widget-inner-title-line-height;
+          letter-spacing: $fw-widget-inner-title-letter-spacing;
+          color: $fw-widget-inner-title-hover-color;
+
+          display: inline-block;
+          padding: 0;
+          &:hover {
+            color: $fw-widget-inner-title-hover-color;
+          }
+        }
+        .count{
+          width: 10%;
+          text-align: right;
+        }
+        &:not(:last-child){
+          margin-bottom: 5px;
+          padding-bottom: 5px;
+        }
+
+        &:after{
+          content: "";
+          display: inline-block;
+          font-family: "Ionicons";
+          font-style: normal;
+          font-variant: normal;
+          font-weight: normal;
+          line-height: 1;
+          text-rendering: auto;
+          text-transform: none;
+
+          font-size: 18px;
+          position: absolute;
+          left: -10px;
+          top: 45%;
+          transform: translateY(-50%);
+          opacity: 0;
+          @include transition(.3s ease);
+        }
+        &:hover{
+          &:after{
+            opacity: .7;
+            left: 0;
+          }
+          > a{
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}

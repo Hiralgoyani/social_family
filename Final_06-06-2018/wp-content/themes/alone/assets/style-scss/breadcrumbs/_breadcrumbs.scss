@@ -1,0 +1,23 @@
+.breadcrumbs{
+	span, span a{
+		font-family: $breadcrumbs-typographyfont-family;
+	  font-size: $breadcrumbs-typographyfont-font-size;
+	  line-height: $breadcrumbs-typographyfont-height;
+	  font-weight: $breadcrumbs-typographyfont-font-weight;
+	  font-style: $breadcrumbs-typographyfont-font-style;
+	  letter-spacing: $breadcrumbs-typographyfont-letter-spacing;
+	  // color: $breadcrumbs-typographyfont-color;
+
+		text-transform: $breadcrumbs-typographyfont-text-uppercase;
+	}
+	span{
+		color: $breadcrumbs-typographyfont-color;
+	}
+	a{
+		@include transition(.3s);
+		text-decoration: none;
+	}
+	.separator{
+		padding: 0 8px;
+	}
+}
